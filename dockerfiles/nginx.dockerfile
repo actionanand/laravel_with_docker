@@ -3,7 +3,7 @@ FROM nginx:1.24.0-alpine
 WORKDIR /etc/nginx/conf.d
 
 COPY nginx/nginx.conf .
-# `.` means `WORKDIR`
+# `.` means `WORKDIR` (current folder)
 
 RUN mv nginx.conf default.conf
 # renaming `default.conf`, as nginx will expect this name
