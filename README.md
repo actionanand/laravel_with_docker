@@ -88,3 +88,51 @@ docker-compose down
 ### Checking the db connection and running migrations
 
 ![image](https://github.com/actionanand/docker_playground/assets/46064269/a046c7c4-1a52-4285-b7c1-9040ec320365)
+
+### Fixing error if happens
+
+When using Docker on Linux, you might face permission errors when adding a bind mount.
+If you happens, try these steps:
+
+* Change the `php.dockerfile` so that it looks like that:
+
+```dockerfile
+FROM php:8.3.1-fpm-alpine
+ 
+WORKDIR /var/www/html
+ 
+COPY src .
+ 
+RUN docker-php-ext-install pdo pdo_mysql
+ 
+RUN addgroup -g 1000 laravel && adduser -G laravel -g laravel -s /bin/sh -D laravel
+ 
+USER laravel
+```
+
+* Please note that the `RUN chown` instruction was removed here, instead we now create a user **laravel** which we use (with the `USER` instruction for commands executed inside of this image / container).
+
+* Also edit the `composer.dockerfile` to look like this:
+
+```dockerfile
+FROM composer:2.6.6
+ 
+RUN addgroup -g 1000 laravel && adduser -G laravel -g laravel -s /bin/sh -D laravel
+ 
+USER laravel
+ 
+WORKDIR /var/www/html
+ 
+ENTRYPOINT [ "composer", "--ignore-platform-reqs" ]
+```
+
+* Here, we add that same **laravel** user and use it for creating the project therefore.
+
+* These steps should ensure that all files which are created by the Composer container are assigned to a user named **laravel** which exists in all containers which have to work on the files.
+
+* Resolving permision issue
+
+```dockerfile
+RUN chown -R www-data:www-data /var/www
+RUN chmod 755 /var/www
+```
