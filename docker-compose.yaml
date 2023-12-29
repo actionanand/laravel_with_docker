@@ -6,6 +6,9 @@ services:
     build:
       context: .
       dockerfile: dockerfiles/nginx.dockerfile
+      # `.` referes to current folder where `.yaml` is there.
+      # We need to copy `src` folder to `WORKDIR` inside docker
+      # So If we we mention `context: ./dockerfiles`, Parent folder for this service won't be in the same directory of `src`
     ports: 
       - '8000:80'
     volumes: 
