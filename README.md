@@ -1,4 +1,4 @@
-# Laravel with Docker
+# Laravel with Docker (Section 6)
 
 Creating laravel project without installing anything in host machine with the help of docker.
 
@@ -136,3 +136,12 @@ ENTRYPOINT [ "composer", "--ignore-platform-reqs" ]
 RUN chown -R www-data:www-data /var/www
 RUN chmod 755 /var/www
 ```
+
+## Associated repos:
+
+1. [Docker Basics](https://github.com/actionanand/docker_playground)
+2. [Managing Data and working with volumes](https://github.com/actionanand/docker_data_volume)
+3. [Docker Communication](https://github.com/actionanand/docker_communication)
+4. [Docker Multi-container with docker-compose](https://github.com/actionanand/docker_multi-container)
+5. [Docker Utility Containers & Executing Commands](https://github.com/actionanand/node-util)
+6. [Laravel with Docker](https://github.com/actionanand/laravel_with_docker)
