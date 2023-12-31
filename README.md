@@ -148,7 +148,8 @@ RUN chmod 755 /var/www
 
 angular
 
-![image](https://github.com/actionanand/laravel_with_docker/assets/46064269/7510a83c-cafb-4b17-9e3d-179d704f2831)
+![image](https://github.com/actionanand/laravel_with_docker/assets/46064269/f3a14469-b781-48ec-ba7f-89891211c351)
+
 
 ![image](https://github.com/actionanand/laravel_with_docker/assets/46064269/555411d5-86de-42b5-88c3-a078adc192cf)
 
