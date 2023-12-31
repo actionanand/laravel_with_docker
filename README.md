@@ -145,17 +145,3 @@ RUN chmod 755 /var/www
 4. [Docker Multi-container with docker-compose](https://github.com/actionanand/docker_multi-container)
 5. [Docker Utility Containers & Executing Commands](https://github.com/actionanand/node-util)
 6. [Laravel with Docker](https://github.com/actionanand/laravel_with_docker)
-
-angular
-
-![image](https://github.com/actionanand/laravel_with_docker/assets/46064269/f3a14469-b781-48ec-ba7f-89891211c351)
-
-
-![image](https://github.com/actionanand/laravel_with_docker/assets/46064269/555411d5-86de-42b5-88c3-a078adc192cf)
-
-![image](https://github.com/actionanand/laravel_with_docker/assets/46064269/f0d40549-7809-487e-b64e-e645441174ec)
-
-
-
-
-
